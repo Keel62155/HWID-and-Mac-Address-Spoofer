@@ -1070,7 +1070,7 @@ def randomize_single_adapter(adapter: dict) -> bool:
 
 
 def randomize_all_supported_adapters():
-    LOGGER.info("Starting combined Wi-Fi/Ethernet MAC randomization.")
+    LOGGER.info("Starting Wi-Fi/Ethernet MAC randomization.")
 
     adapters = get_net_adapters()
 
@@ -1116,7 +1116,7 @@ def randomize_all_supported_adapters():
             print(f"Unhandled error while randomizing adapter: {adapter.get('Name')}")
 
     print("=" * 60)
-    print("Combined randomization finished.")
+    print("Randomizations finished.")
     print(f"Successful: {success_count}")
     print(f"Failed or blocked by driver: {fail_count}")
     print(f"Log file: {LOG_FILE}")
@@ -1188,7 +1188,7 @@ def revert_single_adapter(adapter: dict) -> bool:
 
 
 def revert_all_supported_adapters():
-    LOGGER.info("Starting combined Wi-Fi/Ethernet MAC revert.")
+    LOGGER.info("Starting Wi-Fi/Ethernet MAC revert.")
 
     adapters = get_net_adapters()
 
@@ -1234,7 +1234,7 @@ def revert_all_supported_adapters():
             print(f"Unhandled error while reverting adapter: {adapter.get('Name')}")
 
     print("=" * 60)
-    print("Combined revert finished.")
+    print("Revert finished.")
     print(f"Successful: {success_count}")
     print(f"Failed: {fail_count}")
     print(f"Log file: {LOG_FILE}")
@@ -1390,7 +1390,7 @@ def show_main_menu():
 
     while True:
         clear_navigation_screen()
-        print_navigation_header("COMBINED HWID + MAC TOOL")
+        print_navigation_header("HWID + MAC TOOL")
         print("1. HWID / registry identifier tools")
         print("2. Wi-Fi / Ethernet MAC tools")
         print("3. Current status overview")
@@ -1436,7 +1436,7 @@ if __name__ == "__main__":
         else:
             show_main_menu()
 
-        LOGGER.info("Combined HWID + MAC Tool finished normally.")
+        LOGGER.info("HWID + MAC Tool finished normally.")
     except KeyboardInterrupt:
         LOGGER.warning("User interrupted the script with Ctrl+C.")
         print()
